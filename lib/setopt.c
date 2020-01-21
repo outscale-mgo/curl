@@ -1667,6 +1667,20 @@ CURLcode Curl_vsetopt(struct Curl_easy *data, CURLoption option, va_list param)
                              va_arg(param, struct curl_blob *));
     break;
 #endif
+  case CURLOPT_V4_SIGNATURE:
+    /*
+     * String that holds file type of the SSL certificate to use
+     */
+    result = Curl_setstropt(&data->set.str[STRING_V4_SIGNATURE],
+                            va_arg(param, char *));
+    /*
+     * Basic been set by default it need to be unset here
+     */
+    if(data->set.str[STRING_V4_SIGNATURE] &&
+       (data->set.httpauth == CURLAUTH_NONE ||
+        data->set.httpauth == CURLAUTH_BASIC))
+      data->set.httpauth = CURLAUTH_SIGNATURE_V4;
+    break;
   case CURLOPT_SSLCERTTYPE:
     /*
      * String that holds file type of the SSL certificate to use
