@@ -240,6 +240,7 @@
 --use-ascii (-B)                     5.0
 --user (-u)                          4.0
 --user-agent (-A)                    4.5.1
+--v4-signature                       7.74.0
 --verbose (-v)                       4.0
 --version (-V)                       4.0
 --write-out (-w)                     6.5

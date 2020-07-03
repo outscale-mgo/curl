@@ -234,6 +234,7 @@ DPAGES =					\
   url.d use-ascii.d				\
   user-agent.d					\
   user.d verbose.d				\
+  v4-signature.d                                \
   version.d					\
   write-out.d					\
   xattr.d
