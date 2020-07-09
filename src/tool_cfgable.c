@@ -166,6 +166,8 @@ static void free_config_fields(struct OperationConfig *config)
 
   Curl_safefree(config->ftp_account);
   Curl_safefree(config->ftp_alternative_to_user);
+
+  Curl_safefree(config->v4_provider);
 }
 
 void config_free(struct OperationConfig *config)
