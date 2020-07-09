@@ -787,6 +787,7 @@ typedef enum {
 #define CURLAUTH_DIGEST_IE    (((unsigned long)1)<<4)
 #define CURLAUTH_NTLM_WB      (((unsigned long)1)<<5)
 #define CURLAUTH_BEARER       (((unsigned long)1)<<6)
+#define CURLAUTH_V4_SIGNATURE (((unsigned long)1)<<7)
 #define CURLAUTH_ONLY         (((unsigned long)1)<<31)
 #define CURLAUTH_ANY          (~CURLAUTH_DIGEST_IE)
 #define CURLAUTH_ANYSAFE      (~(CURLAUTH_BASIC|CURLAUTH_DIGEST_IE))
@@ -2030,6 +2031,9 @@ typedef enum {
    * https://www.openssl.org/docs/manmaster/man3/SSL_CTX_set1_groups.html
    */
   CURLOPT(CURLOPT_SSL_EC_CURVES, CURLOPTTYPE_STRINGPOINT, 298),
+
+  /* Provider for V4 signature */
+  CURLOPT(CURLOPT_V4_SIGNATURE, CURLOPTTYPE_STRINGPOINT, 299),
 
   CURLOPT_LASTENTRY /* the last unused */
 } CURLoption;
