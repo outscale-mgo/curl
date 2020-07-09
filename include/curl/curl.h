@@ -744,6 +744,7 @@ typedef enum {
 #define CURLAUTH_DIGEST_IE    (((unsigned long)1)<<4)
 #define CURLAUTH_NTLM_WB      (((unsigned long)1)<<5)
 #define CURLAUTH_BEARER       (((unsigned long)1)<<6)
+#define CURLAUTH_SIGNATURE_V4       (((unsigned long)1)<<7)
 #define CURLAUTH_ONLY         (((unsigned long)1)<<31)
 #define CURLAUTH_ANY          (~CURLAUTH_DIGEST_IE)
 #define CURLAUTH_ANYSAFE      (~(CURLAUTH_BASIC|CURLAUTH_DIGEST_IE))
@@ -1970,6 +1971,9 @@ typedef enum {
   /* Issuer certificate for proxy */
   CURLOPT(CURLOPT_PROXY_ISSUERCERT, CURLOPTTYPE_STRINGPOINT, 296),
   CURLOPT(CURLOPT_PROXY_ISSUERCERT_BLOB, CURLOPTTYPE_BLOB, 297),
+
+  /* Provider for V4 signature */
+  CURLOPT(CURLOPT_V4_SIGNATURE, CURLOPTTYPE_STRINGPOINT, 298),
 
   CURLOPT_LASTENTRY /* the last unused */
 } CURLoption;
