@@ -1641,6 +1641,8 @@ static CURLcode single_transfer(struct GlobalConfig *global,
           my_setopt_str(curl, CURLOPT_SSLKEYTYPE, config->key_type);
           my_setopt_str(curl, CURLOPT_PROXY_SSLKEYTYPE,
                         config->proxy_key_type);
+          my_setopt_str(curl, CURLOPT_V4_SIGNATURE,
+                        config->v4_provider);
 
           if(config->insecure_ok) {
             my_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);

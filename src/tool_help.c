@@ -506,6 +506,7 @@ static const struct helptxt helptext[] = {
    "Server user and password"},
   {"-A, --user-agent <name>",
    "Send User-Agent <name> to server"},
+  {"    --v4-signature <provider1[:provider2]>", "Use V4 Signature"},
   {"-v, --verbose",
    "Make the operation more talkative"},
   {"-V, --version",
